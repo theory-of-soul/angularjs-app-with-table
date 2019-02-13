@@ -4,7 +4,16 @@ import './statistic-list.styles.css';
 statisticListModule.
 component('statisticListCmp', {
   templateUrl: `./statistic-list.template.html`
-}).controller('StatisticListCtrl', StatisticListCtrl);
+}).controller('StatisticListCtrl', [
+  '$scope',
+  '$http',
+  '$q',
+  '$compile',
+  'DTOptionsBuilder',
+  'DTColumnBuilder',
+  'testModal',
+  StatisticListCtrl]
+);
 
 function StatisticListCtrl($scope, $http, $q, $compile, DTOptionsBuilder, DTColumnBuilder, testModal) {
   let vm = this;

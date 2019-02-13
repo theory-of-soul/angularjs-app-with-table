@@ -36,11 +36,13 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: 'statistic-list.template.html',
-      template: './src/statistic-list/statistic-list.template.html'
+      template: './src/statistic-list/statistic-list.template.html',
+      inject: false
     }),
     new HtmlWebpackPlugin({
       filename: 'modal.template.html',
-      template: './src/modal/modal.template.html'
+      template: './src/modal/modal.template.html',
+      inject: false
     }),
     new CopyWebpackPlugin([{
       from: './src/statistic-list/data.json',
