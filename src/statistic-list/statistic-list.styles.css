@@ -1,0 +1,58 @@
+.btn {
+    padding: 5px 30px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.btn--danger {
+    background-color: #ff8989;
+    color: white;
+}
+
+.btn--info {
+    background-color: #bbffb9;
+}
+
+.color {
+    width: 60%;
+    height: 20px;
+    margin: 0 auto;
+}
+
+.color--green {
+    background-color: #7ef373;
+}
+
+.color--gray {
+    background-color: #e5e5e5;
+}
+
+.color--red {
+    background-color: #e93f33;
+}
+
+.color--yellow {
+    background-color: #fff532;
+}
+
+.color--yellow {
+    background-color: #d05bfe;
+}
+
+.change--positive {
+    color: #7ef373;
+}
+
+.change--negative {
+    color: #e93f33;
+}
+
+.dataTables_length,
+.dataTables_filter,
+.dataTables_info,
+.dataTables_paginate {
+    display: none;
+}
+
