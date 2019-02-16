@@ -1,5 +1,6 @@
 import statisticListModule from './statistic-list.module';
 import './statistic-list.styles.css';
+import '../ordering/ordering';
 
 statisticListModule.
 component('statisticListCmp', {
@@ -41,7 +42,8 @@ function StatisticListCtrl($scope, $http, $q, $compile, DTOptionsBuilder, DTColu
     });
     return defer.promise;
   }).withOption('createdRow', bindRowWithScope)
-    .withOption('headerCallback', bindHeaderWithScope);
+    .withOption('headerCallback', bindHeaderWithScope)
+    .withOption('order', []);
 
   vm.dtColumns = [
     DTColumnBuilder.newColumn(null)
@@ -51,9 +53,9 @@ function StatisticListCtrl($scope, $http, $q, $compile, DTOptionsBuilder, DTColu
     DTColumnBuilder.newColumn(null).renderWith(exploreButton).notSortable(),
     DTColumnBuilder.newColumn('suggestions_count').renderWith(showSuggestionCountButton).notSortable(),
     DTColumnBuilder.newColumn('users_per_day').withTitle('Traffic score'),
-    DTColumnBuilder.newColumn('position_info').withTitle('Rank').renderWith(rankColumn),
+    DTColumnBuilder.newColumn('position_info').withTitle('Rank').withOption('type', 'num-html').renderWith(rankColumn),
     DTColumnBuilder.newColumn('total_apps').withTitle('Total apps'),
-    DTColumnBuilder.newColumn('color').withTitle('Color').renderWith(colorColumn),
+    DTColumnBuilder.newColumn('color').withTitle('Color').notSortable().renderWith(colorColumn),
     DTColumnBuilder.newColumn(null).withTitle('').notSortable().renderWith(deleteButtonColumn)
   ];
 
