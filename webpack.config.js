@@ -47,6 +47,9 @@ module.exports = {
     new CopyWebpackPlugin([{
       from: './src/statistic-list/data.json',
       to: '.'
+    }, {
+      from: './src/favicon.ico',
+      to: '.'
     }])
   ]
 };
